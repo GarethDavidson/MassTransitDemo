@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TestPublisher
+{
+    class HttpClientInstance : HttpClient
+    {
+        private static volatile HttpClientInstance instance;
+        private static object syncRoot = new Object();
+
+        private HttpClientInstance()
+        { }
+
+        public static HttpClientInstance GtInstance()
+        {
+            if (instance == null)
+            {
+                lock (syncRoot)
+                {
+                    if (instance == null)
+                        instance = new HttpClientInstance();
+
+                    instance.BaseAddress = new Uri(AppSettings.GetAppSettings("TaskEnginApiBaseUrl"));
+                    instance.DefaultRequestHeaders.Accept.Clear();
+                    instance.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                }
+            }
+            return instance;
+        }
+    }
+}
