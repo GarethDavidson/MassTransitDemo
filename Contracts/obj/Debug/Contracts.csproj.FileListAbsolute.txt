@@ -1,0 +1,5 @@
+\\uk.cf247.net\profiles\Gareth.davidson\Documents\Visual Studio 2015\Projects\QueueMessage\Contracts\bin\Debug\Contracts.dll
+\\uk.cf247.net\profiles\Gareth.davidson\Documents\Visual Studio 2015\Projects\QueueMessage\Contracts\bin\Debug\Contracts.pdb
+\\uk.cf247.net\profiles\Gareth.davidson\Documents\Visual Studio 2015\Projects\QueueMessage\Contracts\obj\Debug\Contracts.csprojResolveAssemblyReference.cache
+\\uk.cf247.net\profiles\Gareth.davidson\Documents\Visual Studio 2015\Projects\QueueMessage\Contracts\obj\Debug\Contracts.dll
+\\uk.cf247.net\profiles\Gareth.davidson\Documents\Visual Studio 2015\Projects\QueueMessage\Contracts\obj\Debug\Contracts.pdb

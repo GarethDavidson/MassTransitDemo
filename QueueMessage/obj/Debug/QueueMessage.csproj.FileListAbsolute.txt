@@ -1,0 +1,11 @@
+\\uk.cf247.net\profiles\gareth.davidson\documents\visual studio 2015\Projects\QueueMessage\QueueMessage\bin\Debug\QueueMessage.exe.config
+\\uk.cf247.net\profiles\gareth.davidson\documents\visual studio 2015\Projects\QueueMessage\QueueMessage\bin\Debug\QueueMessage.exe
+\\uk.cf247.net\profiles\gareth.davidson\documents\visual studio 2015\Projects\QueueMessage\QueueMessage\bin\Debug\QueueMessage.pdb
+\\uk.cf247.net\profiles\gareth.davidson\documents\visual studio 2015\Projects\QueueMessage\QueueMessage\bin\Debug\GreenPipes.xml
+\\uk.cf247.net\profiles\gareth.davidson\documents\visual studio 2015\Projects\QueueMessage\QueueMessage\bin\Debug\MassTransit.xml
+\\uk.cf247.net\profiles\gareth.davidson\documents\visual studio 2015\Projects\QueueMessage\QueueMessage\bin\Debug\MassTransit.RabbitMqTransport.xml
+\\uk.cf247.net\profiles\gareth.davidson\documents\visual studio 2015\Projects\QueueMessage\QueueMessage\bin\Debug\Newtonsoft.Json.xml
+\\uk.cf247.net\profiles\gareth.davidson\documents\visual studio 2015\Projects\QueueMessage\QueueMessage\bin\Debug\RabbitMQ.Client.xml
+\\uk.cf247.net\profiles\gareth.davidson\documents\visual studio 2015\Projects\QueueMessage\QueueMessage\obj\Debug\QueueMessage.csprojResolveAssemblyReference.cache
+\\uk.cf247.net\profiles\gareth.davidson\documents\visual studio 2015\Projects\QueueMessage\QueueMessage\obj\Debug\QueueMessage.exe
+\\uk.cf247.net\profiles\gareth.davidson\documents\visual studio 2015\Projects\QueueMessage\QueueMessage\obj\Debug\QueueMessage.pdb
