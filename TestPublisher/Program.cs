@@ -42,7 +42,7 @@ namespace TestPublisher
             });
 
         }
-        
+
     }
 
     public class ServiceController
@@ -55,7 +55,7 @@ namespace TestPublisher
             this.busControl = busControl;
         }
 
-        public void Start()
+        public async void Start()
         {
             string text = "";
             busControl.StartAsync();
@@ -95,24 +95,22 @@ namespace TestPublisher
 
                 if (HelloWorlds)
                 {
-                    // This Message does note use the scheduler.
-                    // It will be pulished to a Subscriber that will send a json request to the Consumer Controler route
-                    busControl.Publish(new  HelloWorld()
+                    // This Message does not use the scheduler.
+                    // It will be pulished to a Subscriber that can handle this model, it will send a http request to the Consumer Controller route
+                    var Seends = await busControl.GetSendEndpoint(new Uri("rabbitmq://localhost/message_log"));
+
+                    Seends.Send(new HelloWorld()
                     {
                         MessageSend = "Hello World"
                     }).Wait();
                 }
                 else {
-                    Task.Run(async () =>
-                {
-                    // 
                     var scheduleEndPoint = await busControl.GetSendEndpoint(new Uri("rabbitmq://localhost/quartz"));
 
                     await scheduleEndPoint.ScheduleSend(
                         new Uri("rabbitmq://localhost/MtPubSubExample_TestSubscriber"),
                        TimeToSend,
                         new SomethingHappened() { What = text, When = DateTime.Now, DeliveryTime = TimeToSend });
-                });
                 }
             }
         }

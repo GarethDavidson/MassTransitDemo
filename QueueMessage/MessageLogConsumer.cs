@@ -1,5 +1,4 @@
 ﻿using MassTransit;
-using Messaging.Models.Interfaces;
 using Messaging.Models;
 using System;
 using System.Threading.Tasks;

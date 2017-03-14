@@ -11,7 +11,7 @@ public class ScheduleNotificationConsumer :
         Console.WriteLine(
             "TXT: " + context.Message.What +
             ", When: " + context.Message.When.ToString() +
-            ", DT: " + context.Message.DeliveryTime.ToString()
+            ", Delivery Time: " + context.Message.DeliveryTime.ToString()
             );
     }
 }
