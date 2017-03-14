@@ -109,12 +109,25 @@ namespace TestPublisher
                     }).Wait();
                 }
                 else {
-                    var scheduleEndPoint = await busControl.GetSendEndpoint(new Uri("rabbitmq://localhost/quartz"));
 
-                    await scheduleEndPoint.ScheduleSend(
-                        new Uri("rabbitmq://localhost/MtPubSubExample_TestSubscriber"),
-                       TimeToSend,
-                        new SomethingHappened() { What = text, When = DateTime.Now, DeliveryTime = TimeToSend });
+                    if (TimeToSend > DateTime.Now)
+                    {
+                        var scheduleEndPoint = await busControl.GetSendEndpoint(new Uri("rabbitmq://localhost/quartz"));
+
+                        await scheduleEndPoint.ScheduleSend(
+                            new Uri("rabbitmq://localhost/MtPubSubExample_TestSubscriber"),
+                           TimeToSend,
+                            new SomethingHappened() { What = text, When = DateTime.Now, DeliveryTime = TimeToSend });
+
+                    }
+                    else
+                    {
+                        var MtPubSubExample_TestSubscriber = await busControl.GetSendEndpoint(new Uri("rabbitmq://localhost/MtPubSubExample_TestSubscriber"));
+
+                        MtPubSubExample_TestSubscriber.Send(
+                            new SomethingHappened() { What = text + " Now", When = DateTime.Now, DeliveryTime = TimeToSend }
+                            ).Wait();
+                    }
                 }
             }
         }
