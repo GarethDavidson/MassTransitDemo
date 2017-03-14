@@ -17,12 +17,18 @@ namespace TestSubscriber
                        h.Password("guest");
                    });
                 
+                  // Creating new endpoints here create new queues
                   x.ReceiveEndpoint(host, "MtPubSubExample_TestSubscriber", ep =>
                    {
                        ep.Consumer<ScheduleNotificationConsumer>();
                    });
 
                   x.ReceiveEndpoint(host, "message_log", e =>
+                  {
+                      e.Consumer(() => new MessageLogConsumer(new SubmitMessage<HelloWorld>("http://localhost:56045", "api/Hello")));
+                  });
+
+                  x.ReceiveEndpoint(host, "message_log2", e =>
                   {
                       e.Consumer(() => new MessageLogConsumer(new SubmitMessage<HelloWorld>("http://localhost:56045", "api/Hello")));
                   });
