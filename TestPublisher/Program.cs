@@ -58,7 +58,7 @@ namespace TestPublisher
         public async void Start()
         {
             string text = "";
-            busControl.StartAsync();
+            await busControl.StartAsync();
             while (text != "quit")
             {
                 Console.WriteLine("Enter a message: ");
@@ -97,9 +97,9 @@ namespace TestPublisher
                 {
                     // This Message does not use the scheduler.
                     // It will be pulished to a Subscriber that can handle this model, it will send a http request to the Consumer Controller route
-                    var Seends = await busControl.GetSendEndpoint(new Uri("rabbitmq://localhost/message_log"));
+                    var message_log = await busControl.GetSendEndpoint(new Uri("rabbitmq://localhost/message_log"));
 
-                    Seends.Send(new HelloWorld()
+                    message_log.Send(new HelloWorld()
                     {
                         MessageSend = "Hello World"
                     }).Wait();
