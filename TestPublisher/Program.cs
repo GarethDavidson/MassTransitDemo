@@ -1,11 +1,8 @@
 ﻿using MassTransit;
-using Messaging;
-using Messaging.Models.Interfaces;
 using Messaging.Models;
 using Quartz;
 using Quartz.Impl;
 using System;
-using System.Threading.Tasks;
 using Topshelf;
 
 namespace TestPublisher
@@ -23,6 +20,8 @@ namespace TestPublisher
                 });
 
                 // Change to UseMessageScheduler with the Uri of the running scheduler
+                // Azure Comes with its own Scheduler,
+                // MassTransit comes with Quartz.net, which is currently being used. 
                 x.UseInMemoryScheduler();
 
             });
@@ -58,14 +57,19 @@ namespace TestPublisher
         public async void Start()
         {
             string text = "";
+
             await busControl.StartAsync();
+
             while (text != "quit")
             {
                 Console.WriteLine("Enter a message: ");
+
                 text = Console.ReadLine();
 
                 DateTime TimeToSend = DateTime.Now;
+
                 bool HelloWorlds = false;
+
                 switch (text.ToLower())
                 {
                     case "now":
