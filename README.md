@@ -1,7 +1,7 @@
 "# MassTransitDemo" <br />
 First follow these instructions to install RabbitMQ https://www.rabbitmq.com/install-windows.html <br />
 
-You may experince an error where rabbit mq tries to install on your network drive. To resolve edit the file
+You may experince an error where RabbitMQ tries to install on your network drive. To resolve edit the file
 rabbitmq-defaults.bat in the derictory of C:\Program Files\RabbitMQ Server\rabbitmq_server-3.6.6\sbin, and change this value to:  <br />
 set RABBITMQ_BASE=C:\RabbitMQ.<br /> The service may require reinstalling via cmd:  <br /> rabbitmq-service uninstall<br /> then<br /> rabbitmq-service install <br />
 
