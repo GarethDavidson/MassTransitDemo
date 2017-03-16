@@ -1,5 +1,7 @@
 ﻿using MassTransit;
 using Messaging.Models;
+using Messaging.Models.Interface;
+using Messaging.Models.Interfaces;
 using Quartz;
 using Quartz.Impl;
 using System;
@@ -92,7 +94,7 @@ namespace TestPublisher
                         break;
                     default:
                         {
-                            System.Console.WriteLine("Other number");
+                            System.Console.WriteLine("Other Input");
                             break;
                         }
                 }
@@ -103,29 +105,27 @@ namespace TestPublisher
                     // It will be pulished to a Subscriber that can handle this model, it will send a http request to the Consumer Controller route
                     var message_log = await busControl.GetSendEndpoint(new Uri("rabbitmq://localhost/message_log"));
 
-                    message_log.Send(new HelloWorld()
+                    message_log.Send<IHelloWorld>(new
                     {
                         MessageSend = "Hello World"
                     }).Wait();
                 }
                 else {
-
                     if (TimeToSend > DateTime.Now)
                     {
                         var scheduleEndPoint = await busControl.GetSendEndpoint(new Uri("rabbitmq://localhost/quartz"));
 
-                        await scheduleEndPoint.ScheduleSend(
+                        await scheduleEndPoint.ScheduleSend<ISomethingHappened>(
                             new Uri("rabbitmq://localhost/MtPubSubExample_TestSubscriber"),
                            TimeToSend,
-                            new SomethingHappened() { What = text, When = DateTime.Now, DeliveryTime = TimeToSend });
-
+                            new { What = text, When = DateTime.Now, DeliveryTime = TimeToSend });
                     }
                     else
                     {
                         var MtPubSubExample_TestSubscriber = await busControl.GetSendEndpoint(new Uri("rabbitmq://localhost/MtPubSubExample_TestSubscriber"));
 
-                        MtPubSubExample_TestSubscriber.Send(
-                            new SomethingHappened() { What = text + " Now", When = DateTime.Now, DeliveryTime = TimeToSend }
+                        MtPubSubExample_TestSubscriber.Send<ISomethingHappened>(
+                            new { What = text + " Now", When = DateTime.Now, DeliveryTime = TimeToSend }
                             ).Wait();
                     }
                 }
