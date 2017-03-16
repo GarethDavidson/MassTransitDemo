@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
-using Messaging.Models;
 using System.Threading.Tasks;
+using Messaging.Models.Interfaces;
 
 namespace Consumer.Controllers
 {
@@ -11,9 +11,9 @@ namespace Consumer.Controllers
         {
         }
 
-        [Route("Hello")]
+        [Route("Hello")] // route is app/Hello, 
         [HttpPost]
-        public async Task<IHttpActionResult> GetUserInfo([FromBody] HelloWorld MessageLog)
+        public async Task<IHttpActionResult> GetUserInfo([FromBody] IHelloWorld MessageLog)
         {
             var haveALook = MessageLog;
             return Ok();

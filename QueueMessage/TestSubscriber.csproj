@@ -96,7 +96,7 @@
     <Compile Include="MessageLogConsumer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScheduleNotificationConsumer .cs" />
+    <Compile Include="ScheduleNotificationConsumer.cs" />
     <Compile Include="SubmitMessage.cs" />
   </ItemGroup>
   <ItemGroup>

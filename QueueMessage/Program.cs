@@ -25,12 +25,12 @@ namespace TestSubscriber
 
                   x.ReceiveEndpoint(host, "message_log", e =>
                   {
-                      e.Consumer(() => new MessageLogConsumer(new SubmitMessage<HelloWorld>("http://localhost:56045", "api/Hello")));
+                      e.Consumer(() => new MessageLogConsumer(new SubmitMessage<IHelloWorld>("http://localhost:56045", "api/Hello")));
                   });
 
                   x.ReceiveEndpoint(host, "message_log2", e =>
                   {
-                      e.Consumer(() => new MessageLogConsumer(new SubmitMessage<HelloWorld>("http://localhost:56045", "api/Hello")));
+                      e.Consumer(() => new MessageLogConsumer(new SubmitMessage<IHelloWorld>("http://localhost:56045", "api/Hello")));
                   });
               });
 
