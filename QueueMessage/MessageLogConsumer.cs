@@ -1,20 +1,20 @@
 ﻿using MassTransit;
-using Messaging.Models.Interfaces;
+using Messaging.Models;
 using System;
 using System.Threading.Tasks;
 
 namespace TestSubscriber
 {
-    class MessageLogConsumer : IConsumer<IHelloWorld>
+    class MessageLogConsumer : IConsumer<HelloWorld>
     {
-        private ISubmitMessage<IHelloWorld> MessageService;
+        private ISubmitMessage<HelloWorld> MessageService;
 
-        public MessageLogConsumer(ISubmitMessage<IHelloWorld> messageService)
+        public MessageLogConsumer(ISubmitMessage<HelloWorld> messageService)
         {
             MessageService = messageService;
         }
 
-        public  async Task Consume(ConsumeContext<IHelloWorld> context)
+        public  async Task Consume(ConsumeContext<HelloWorld> context)
         {
             try
             {
