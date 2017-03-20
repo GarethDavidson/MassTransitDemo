@@ -2,6 +2,6 @@
 {
     public class IHelloWorld
     {
-        string MessageSend { get; }
+        public string MessageSend { get; }
     }
 }
