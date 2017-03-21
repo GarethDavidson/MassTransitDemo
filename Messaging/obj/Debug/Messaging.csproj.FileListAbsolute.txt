@@ -1,0 +1,16 @@
+D:\MassTransitDemo\Messaging\bin\Debug\Messaging.dll
+D:\MassTransitDemo\Messaging\bin\Debug\Messaging.pdb
+D:\MassTransitDemo\Messaging\bin\Debug\GreenPipes.dll
+D:\MassTransitDemo\Messaging\bin\Debug\MassTransit.dll
+D:\MassTransitDemo\Messaging\bin\Debug\MassTransit.RabbitMqTransport.dll
+D:\MassTransitDemo\Messaging\bin\Debug\NewId.dll
+D:\MassTransitDemo\Messaging\bin\Debug\Newtonsoft.Json.dll
+D:\MassTransitDemo\Messaging\bin\Debug\RabbitMQ.Client.dll
+D:\MassTransitDemo\Messaging\bin\Debug\GreenPipes.xml
+D:\MassTransitDemo\Messaging\bin\Debug\MassTransit.xml
+D:\MassTransitDemo\Messaging\bin\Debug\MassTransit.RabbitMqTransport.xml
+D:\MassTransitDemo\Messaging\bin\Debug\Newtonsoft.Json.xml
+D:\MassTransitDemo\Messaging\bin\Debug\RabbitMQ.Client.xml
+D:\MassTransitDemo\Messaging\obj\Debug\Messaging.csprojResolveAssemblyReference.cache
+D:\MassTransitDemo\Messaging\obj\Debug\Messaging.dll
+D:\MassTransitDemo\Messaging\obj\Debug\Messaging.pdb
