@@ -21,7 +21,7 @@ namespace TestPublisher
 
                 // Change to UseMessageScheduler with the Uri of the running scheduler
                 // Azure Comes with its own Scheduler,
-                // MassTransit comes with Quartz.net, which is currently being used. 
+                // MassTransit comes with Quartz.net, which is currently running as an in-memory service. 
                 x.UseInMemoryScheduler();
 
             });
