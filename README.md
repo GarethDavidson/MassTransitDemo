@@ -9,7 +9,7 @@ set RABBITMQ_BASE=C:\RabbitMQ.<br /> The service may require reinstalling via cm
 Set startup projects as multiple and select TestPublisher, TestSubcriber and Consumer to Start
 <br />
 
-![alt tag](https://cloud.githubusercontent.com/assets/19776368/23866499/f209b818-0810-11e7-888e-1fa776fc8827.png)
+![alt tag](https://cloud.githubusercontent.com/assets/19776368/24191680/67f21b90-0ee4-11e7-8b46-b7e0afe13a9a.png)
 
 https://www.lucidchart.com/invitations/accept/1aecde98-c202-48b6-aa56-19046e277723
 
