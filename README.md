@@ -5,6 +5,9 @@ You may experince an error where RabbitMQ tries to install on your network drive
 rabbitmq-defaults.bat in the derictory of C:\Program Files\RabbitMQ Server\rabbitmq_server-3.6.6\sbin, and change this value to:  <br />
 set RABBITMQ_BASE=C:\RabbitMQ.<br /> The service may require reinstalling via cmd:  <br /> rabbitmq-service uninstall<br /> then<br /> rabbitmq-service install <br />
 
+RESTART!!! RESTART COMPUTER!!!!!!!!
+<br/>
+
 <br />
 Set startup projects as multiple and select TestPublisher, TestSubcriber and Consumer to Start
 <br />
